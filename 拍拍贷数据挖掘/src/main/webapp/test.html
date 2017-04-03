@@ -1,0 +1,11 @@
+$scope.myTotalprofileCompare = Math.round(($scope.myTotalprofile - data1.myTotalprofile.total)*100)/100;
+				    
+					if($scope.myTotalprofileCompare<0){
+						$scope.myTotalprofileCompareResult = '比昨日减少：'+$scope.myTotalprofileCompare+'元';
+					}
+					if($scope.myTotalprofileCompare==0){
+						$scope.myTotalprofileCompareResult = '跟昨日一样';
+					}
+					if($scope.myTotalprofileCompare>0){
+						$scope.myTotalprofileCompareResult = '比昨日增加：'+$scope.myTotalprofileCompare+'元';
+					}
