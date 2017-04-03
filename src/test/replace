@@ -1,0 +1,11 @@
+$scope.totalInvestmentCompare = Math.round(($scope.totalInvestment - data1.totalInvestment.total)*100)/100;
+				    
+					if($scope.totalInvestmentCompare<0){
+						$scope.totalInvestmentCompareResult = '比昨日减少：'+$scope.totalInvestmentCompare+'元';
+					}
+					if($scope.totalInvestmentCompare==0){
+						$scope.totalInvestmentCompareResult = '跟昨日一样';
+					}
+					if($scope.totalInvestmentCompare>0){
+						$scope.totalInvestmentCompareResult = '比昨日增加：'+$scope.totalInvestmentCompare+'元';
+					}

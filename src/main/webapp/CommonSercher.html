@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>God Is Programmer</title>  
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/commonSercher.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="css/my.css" rel="stylesheet">  
+</head>
+<body>
+
+<!-- 页面所以内容 -->
+<div class="container" ng-app="commonSercherAPP" ng-controller="commonSercherC">
+
+<!-- 导航 -->
+ <nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="mainPage.html">首页</a>
+		<a class="navbar-brand" href="#">拍拍</a>
+		<a class="navbar-brand" href="CommonSercher.html">数据挖掘</a>
+		<a class="navbar-brand" href="#">远程</a>
+	</div>
+	</div>
+</nav>
+
+<!-- 正文内容 -->
+<div class="container-fluid">
+
+<!-- 获取位置和总页数 -->
+<div class="row" align="left">
+<div class="col-xs-5 col-sm-6">
+输入第一页地址<br>
+输入第二页地址<br>
+</div>
+<div class="col-xs-7 col-sm-6" >
+<input type="text" ng-model="firstPageURL" ><br>
+<input type="text" ng-model="secondPageURL" ><br>
+</div>
+<div class="col-xs-12 col-sm-12" >
+  <input type="button" ng-click="getPagePosition()" value="获取URL规则和总页数"><br>
+  URL第几个位输入页数:{{pagePosition}}&nbsp&nbsp&nbsp&nbsp总页数:{{totalPage}}
+</div>
+</div>
+
+<!-- 获取ID -->
+<div class="row" align="left" style="margin-top: 15px" >
+<div class="col-xs-5 col-sm-6">
+  <a href="getTextFile.do?firstPageURL={{firstPageURL}}&IsPPD={{IsPPD}}"><input type="button" value="获取text文件"></a>
+  拍拍贷有密码<input type="checkbox" ng-model="IsPPD"><br>
+
+</div>
+<div class="col-xs-7 col-sm-6" >
+<input type="text" ng-model="firstPageURL" ><br>
+</div>
+<div class="clearfix visible-xs"></div>
+
+<div class="col-xs-5 col-sm-6">
+  <input type="button" value="输入元素选择条件"><br>
+</div>
+<div class="col-xs-7 col-sm-6" >
+  <input type="text" ng-model="elementCharacter" ><br>
+  {{elementContent}}
+</div>
+<div class="clearfix visible-xs"></div>
+
+<div class="col-xs-12 col-sm-6">  
+  元素内容为：{{elementContent}}
+</div>
+
+
+
+  
+
+
+</div>
+
+
+<br><br><input type="button" ng-click="jq()" value="开始搜索" style="margin-left: 100px">
+</div>
+
+ <!-- 尾部 -->
+ <div class="container-fluid">
+        
+ </div>
+
+</div>
+
+
+
+
+</body>
+</html>

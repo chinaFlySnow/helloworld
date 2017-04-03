@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>God Is Programmer</title>  
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="themes/default.css">
+    <link rel="stylesheet" href="themes/default.date.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="themes/picker.js"></script>
+    <script src="themes/picker.date.js"></script>
+    <script src="themes/legacy.js"></script>
+  
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript" src="bootstrap/js/Chart.min.js"></script>
+ </head>  
+
+<body>  
+    
+    <!-- 页面所以内容 -->
+<div class="container" ng-app="mainPageApp" ng-controller="mainPageController">
+    
+   <!-- 导航 -->
+   <nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="mainPage.html">首页</a>
+		<a class="navbar-brand" href="#">拍拍</a>
+		<a class="navbar-brand" href="CommonSercher.html">数据挖掘</a>
+		<a class="navbar-brand" href="#">远程</a>
+	</div>
+	</div>
+   </nav>
+    
+    <!-- 内容区 -->
+    <div class="container-fluid" style="height: 700px">
+    
+       <div class="row" align="left">
+          <h4 align="left">今日重要数据</h4>
+          <div class="col-xs-7 col-sm-6">
+            <div class="row">总投资&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp：{{totalInvestment}}元</div>
+            <div class="row">拍拍总额&nbsp&nbsp&nbsp&nbsp：{{totalMoney}}元</div>
+            <div class="row">拍拍算利润：{{totalprofile}}元</div>
+            <div class="row">自己算利润：{{myTotalprofile}}元</div>         
+            <div class="row">总坏账&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp：{{badTotalMoney}}元</div>
+            <div class="row">>30天坏账&nbsp：{{badMoreThanThirty}}元</div>
+          </div>
+          <div class="col-xs-5 col-sm-6">
+            <div class="row">{{totalInvestmentCompareResult}}</div>
+            <div class="row">{{totalMoneyCompareResult}}  </div>
+            <div class="row">{{totalprofileCompareResult}}  </div>
+            <div class="row">{{myTotalprofileCompareResult}}  </div>
+            <div class="row"> {{badTotalMoneyCompareResult}}   </div>  
+            <div class="row">{{badMoreThanThirtyCompareResult}}</div>
+          </div>
+       </div> 
+       
+        <div style="margin-top: 15px" class="row" align="left">
+            数据源：<select ng-model="dataSoure" >
+               <option value="totalInvestment">总投资
+               <option value="totalMoney">拍拍总额
+               <option value="totalprofile">拍拍算利润
+               <option value="myTotalprofile">自己算利润</option>
+               <option value="badTotalMoney">总坏账
+               <option value="badMoreThanThirty">>30天坏账
+            </select>&nbsp&nbsp&nbsp&nbsp<a ng-click="getPictureData()"><button ng-bind="showName"></button></a><br><br>
+              时间范围：<input id="input_01" style="width: 120px"  class="datepicker" name="date" type="text" ng-blur="getDate()" autofocuss data-valuee="2014-08-08">
+              到<input id="input_02" style="width: 120px"  class="datepicker" name="date" type="text" ng-blur="getDate()" autofocuss  data-valuee="2014-08-08">
+              <div id="container"></div>
+        </div>
+        <div id="pictureDiv">
+            <canvas style="margin-top: 10px"  id="myChart" width="300" height="200"></canvas>
+        </div>
+    </div>
+    
+    <!-- 尾部 -->
+    <div class="container-fluid">
+    
+     <!-- 测试用于触发 -->
+ 
+      <input type="button" value="测试" ng-click="functionTest()">
+    </div>
+</div>
+     
+
+</body>  
+
+</html>
